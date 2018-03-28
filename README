@@ -1,0 +1,31 @@
+README for CS5600 hw1
+
+Author : Rishab Khandelwal
+Email : rishab@ccs.neu.edu
+
+Contents of the submission:
+	-README
+	-myckpt.h
+	-myckpt.c
+	-hello.c
+	-Makefile
+	-restart.c
+	-restart.h
+
+
+Running/testing the code:
+	- Do a make check or alternatively do the following : 
+	- Start the target program (i.e. 'hello')
+		./hello
+	- Send SIGUSR2 signal to terminate the target program, this will triger the creation of checkpoint image (resides at './myckpt') for later use
+		kill -12 `pgrep -n hello`
+	- Resume the target program using the checkpoint image created on previous step
+		./restart myckpt
+
+Automation with Makefile:
+	- to clean the environment
+		make clean
+	- to clean, build and test the code
+		make [check]
+
+Make build compiles the process file
